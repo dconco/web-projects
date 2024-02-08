@@ -1,11 +1,11 @@
 let code: string = `
-   (async function battery():void {
+   (async function battery() {
       let battery = await window.navigator.getBattery()
       console.log(battery)
    }())
 `
 
-const exec: void = (function (...code) {
+const exec = (function (...code: string[]): void {
    code.forEach(code => {
       try {
          eval(code)
