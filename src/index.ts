@@ -1,9 +1,23 @@
-const app_header: HTMLElement = document.getElementById('app-header')
-/*
-app_header?.addEventListener('click', (): void => {
-   app_header?.style.transform = 'scale(110%)'
+const app_header: HTMLElement = document.getElementById('app-header'),
+      round_anim: HTMLElement = document.getElementById('round-anim'),
+      down_arrow: HTMLElement = document.getElementById('down-arrow')
+
+let scroll_count: number = 0
+
+/* Window Scroll Event */
+window.addEventListener('scroll', (): void => {
+   /* Bottom Arrow Scroll Animation */
+   if (window.scrollY > 9) 
+      down_arrow?.style.bottom = '-50px';
+   else 
+      down_arrow?.style.bottom = '10px';
    
-   setTimeout((): void => {
-      app_header?.style.transform = 'scale(100%)'
-   }, 500);
-})*/
+   /* Header Scroll Animation */
+   if (window.scrollY > scroll_count) 
+      app_header?.style.animationName = 'header_anim_up';
+   
+})
+
+down_arrow.onclick = function(): void {
+   window.scrollTo(0, 100)
+}
