@@ -5,7 +5,7 @@ let code: string = `
    }())
 `
 
-const exec = (function (...code: string[]): void {
+(function (...code: string[]): void {
    code.forEach(code => {
       try {
          eval(code)

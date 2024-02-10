@@ -1,6 +1,60 @@
 body {
+   margin: 0;
+   height: 100vh;
    background-color: #adfffa;
 }
-header {
-   
+#app-header {
+   width: 85%;
+   height: 50px;
+   max-width: 500px;
+   background: blue;
+   display: flex;
+   margin: 10px auto;
+   user-select: none;
+   align-items: center;
+   justify-content: center;
+   border-radius: 20px;
+   animation-name: HeaderAnim;
+   animation-duration: 300ms;
+   animation-timing-function: linear;
+   outline: 5px solid skyblue;
+   transition-duration: 0.3s;
+   text-transform: uppercase;
+}
+#app-header:active {
+   background: #2620e2cc;
+   transform: scale(110%);
+}
+
+#app-header span {
+   color: wheat;
+   font-size: 14;
+   font-weight: 900;
+   font-family: Capitals, Impact, fantasy;
+}
+
+@keyframes HeaderAnim {
+   0% {
+      transform: translateY(-55px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}
+
+#round-anim {
+   height: 90%;
+}
+.round1, .round2 {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
+   border: 5px solid red;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.round2 {
+   width: 150px;
+   height: 150px;
 }
