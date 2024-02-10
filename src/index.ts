@@ -7,15 +7,18 @@ let scroll_count: number = 0
 /* Window Scroll Event */
 window.addEventListener('scroll', (): void => {
    /* Bottom Arrow Scroll Animation */
-   if (window.scrollY > 9) 
+   if (window.scrollY > 9)
       down_arrow?.style.bottom = '-50px';
-   else 
+   else
       down_arrow?.style.bottom = '10px';
    
    /* Header Scroll Animation */
-   if (window.scrollY > scroll_count) 
+   if (window.scrollY > scroll_count)
       app_header?.style.animationName = 'header_anim_up';
+   else
+      app_header?.style.animationName = 'header_anim_down';
    
+   scroll_count = window.scrollY
 })
 
 down_arrow.onclick = function(): void {

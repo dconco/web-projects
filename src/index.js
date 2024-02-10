@@ -10,6 +10,9 @@ window.addEventListener('scroll', function () {
     /* Header Scroll Animation */
     if (window.scrollY > scroll_count)
         app_header === null || app_header === void 0 ? void 0 : app_header.style.animationName = 'header_anim_up';
+    else
+        app_header === null || app_header === void 0 ? void 0 : app_header.style.animationName = 'header_anim_down';
+    scroll_count = window.scrollY;
 });
 down_arrow.onclick = function () {
     window.scrollTo(0, 100);
