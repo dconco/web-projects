@@ -8,13 +8,13 @@ body {
 }
 
 @keyframes header_anim_down {
-   from { transform: translateY(-70px) }
+   from { transform: translateY(-80px) }
    to { transform: translateY(0) }
 }
 
 @keyframes header_anim_up {
    from { transform: translateY(0) }
-   to { transform: translateY(-70px) }
+   to { transform: translateY(-80px) }
 }
 
 #app-header {
@@ -23,12 +23,13 @@ body {
    height: 70px;
    display: flex;
    position: fixed;
-   background: #03bd44;
    padding-bottom: 5px;
    align-items: center;
    justify-content: center;
-   backdrop-filter: blur(100%);
-   -webkit-backdrop-filter: blur(100%);
+   background: #ffffff3a;
+   backdrop-filter: blur(8px);
+   -webkit-backdrop-filter: blur(8px);
+   box-shadow: 0 4px 10px #ffffff6b;
    animation: header_anim_down 300ms linear forwards;
 }
 #app-header .header {
@@ -59,11 +60,12 @@ body {
 
 #round-anim {
    display: flex;
-   /*margin-top: 70px;*/
+   margin-top: 70px;
    align-items: center;
    justify-content: center;
+   font-weight: bold;
+   font-size: 25px;
    height: calc(100% - 60px);
-   background: orange;
 }
 #round-anim .round {
    width: 200px;

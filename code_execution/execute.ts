@@ -3,7 +3,7 @@ let code: string = `
       let battery = await window.navigator.getBattery()
       console.log(battery)
    }())
-`
+`;
 
 (function (...code: string[]): void {
    code.forEach(code => {

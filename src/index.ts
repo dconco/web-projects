@@ -21,6 +21,11 @@ window.addEventListener('scroll', (): void => {
    scroll_count = window.scrollY
 })
 
+down_arrow?.style.bottom = '-50px'
+setTimeout((): void => {
+   down_arrow?.style.bottom = '10px'
+}, 3000)
+
 down_arrow.onclick = function(): void {
    window.scrollTo(0, 100)
 }

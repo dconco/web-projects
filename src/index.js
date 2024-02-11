@@ -14,6 +14,10 @@ window.addEventListener('scroll', function () {
         app_header === null || app_header === void 0 ? void 0 : app_header.style.animationName = 'header_anim_down';
     scroll_count = window.scrollY;
 });
+down_arrow === null || down_arrow === void 0 ? void 0 : down_arrow.style.bottom = '-50px';
+setTimeout(function () {
+    down_arrow === null || down_arrow === void 0 ? void 0 : down_arrow.style.bottom = '10px';
+}, 3000);
 down_arrow.onclick = function () {
     window.scrollTo(0, 100);
 };
