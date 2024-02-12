@@ -53,11 +53,10 @@ body {
 #round-anim {
    display: flex;
    font-size: 25px;
-   margin-top: 70px;
    font-weight: bold;
    align-items: center;
    justify-content: center;
-   height: calc(100% - 60px);
+   height: calc(100% - 20px);
 }
 #round-anim > .round {
    display: flex;
@@ -84,6 +83,9 @@ body {
    -webkit-text-stroke: 2.5px #f5c41b;
    font-family: Verdana, Trebuchet MS;
    animation: text_move_left 300ms ease-in-out;
+}
+#top-bottom-name {
+   
 }
 
 #down-arrow {
@@ -162,4 +164,10 @@ body {
       transform: translateX(0);
       opacity: 1;
    }
+}
+
+@keyframes text_dance_anim {
+   0% { transform: translateY(10px) }
+   50% { transform: translateY(-10px) }
+   100% { transform: translateY(0px) }
 }

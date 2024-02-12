@@ -1,8 +1,13 @@
 const app_header: HTMLElement = document.getElementById('app-header'),
       round_anim: HTMLElement = document.getElementById('round-anim'),
-      down_arrow: HTMLElement = document.getElementById('down-arrow')
+      down_arrow: HTMLElement = document.getElementById('down-arrow'),
+      top_name: HTMLDivElement = document.createElement('div')
 
-let scroll_count: number = 0
+let round_div: HTMLDivElement,
+    top_text: HTMLSpanElement,
+    scroll_count: number = 0,
+    count: number = 0
+
 
 /* Window Scroll Event */
 window.addEventListener('scroll', (): void => {
@@ -30,16 +35,12 @@ down_arrow.onclick = function(): void {
    window.scrollTo(0, 100)
 }
 
-
 /* Round Loader Animation */
-let count: number = 0
-let round_div: HTMLDivElement
-
 var intvl = setInterval((): void => {
    if (count < 3) {
       round_div = document.createElement('div')
       round_div?.className = 'round'
-      //round_anim?.appendChild(round_div)
+      round_anim?.appendChild(round_div)
       
       count++
    } else {
@@ -47,32 +48,35 @@ var intvl = setInterval((): void => {
    }
 }, 500)
 
+/* Background Color Animation */
 setTimeout((): void => {
    var body_anim_intvl = setInterval((): void => {
       let color_rand = Math.floor(Math.random() * 999999)
       document.body.style.backgroundColor = `#${color_rand}`
    }, 800)
+   
+   /* Top Name Animation */
+   let i: number = 0;
+   let text: string = 'Dave Conco'
+   top_name?.id = 'top-name'
+   
+   setTimeout(() => {
+      var intvl2 = setInterval((): void => {
+         if (i < text.length) {
+            top_text = document.createElement('span')
+            top_text?.innerText = text[i]
+            
+            top_name?.appendChild(top_text)
+            i++
+         } else {
+            clearInterval(intvl2)
+         }
+      }, 200)
+   }, 1500);
+   
+   setInterval((): void | string => top_text?.style.animation = 'text_dance_anim 0.8s 1s ease-in-out infinite', 200)
 }, 9000)
 
-let top_name: HTMLDivElement = document.createElement('div')
-let top_text: HTMLSpanElement
-
-let i = 0;
-let text = 'Dave Conco'
-top_name?.id = 'top-name'
-
-var intvl2 = setInterval((): void => {
-   if (i < text.length) {
-      top_text = document.createElement('span')
-      top_text?.innerText = text[i]
-      top_text?.className = 'top-text'
-      
-      top_name?.appendChild(top_text)
-      i++
-   } else {
-      clearInterval(intvl2)
-   }
-}, 200)
 
 round_anim?.innerHTML = ''
 round_anim?.appendChild(top_name)
