@@ -74,7 +74,7 @@ setTimeout((): void => {
       }, 200)
    }, 1500);
    
-   setInterval((): void | string => top_text?.style.animation = 'text_dance_anim 0.8s 1s ease-in-out infinite', 200)
+   setInterval((): void | string => top_text?.style.animation = 'text_dance_anim 0.8s 1s ease-in-out infinite', 250)
 }, 9000)
 
 

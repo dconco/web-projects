@@ -56,7 +56,7 @@ setTimeout(function () {
             }
         }, 200);
     }, 1500);
-    setInterval(function () { return top_text === null || top_text === void 0 ? void 0 : top_text.style.animation = 'text_dance_anim 0.8s 1s ease-in-out infinite'; }, 200);
+    setInterval(function () { return top_text === null || top_text === void 0 ? void 0 : top_text.style.animation = 'text_dance_anim 0.8s 1s ease-in-out infinite'; }, 250);
 }, 9000);
 round_anim === null || round_anim === void 0 ? void 0 : round_anim.innerHTML = '';
 round_anim === null || round_anim === void 0 ? void 0 : round_anim.appendChild(top_name);
