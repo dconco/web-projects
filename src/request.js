@@ -5,19 +5,19 @@ async function Login(userInfo) {
             'content-type': 'application/json'
          }
       })
-      console.log(response);
-      //const { message, userId } = response.data
-         
-      //console.log({ message: `${message} UserId=${UserId}` })
-   } catch (error) {
+      const { message, userId } = response.data
+      console.log({ message: `${message} UserId=${userId}` })
+   }
+   catch (error) 
+   {
       if (error.response) {
          const { status, message, type } = error.response.data
-         console.log({ type: type, message: message })
+         console.log({ type, message })
       }
       else {
-         console.log({ message: error.code || error.message })
+         console.log({ message: error.message || error.code })
       }
    }
 }
 
-Login({ email: 'concodave@gmail.com', password: 'david@123' })
+Login({ email: 'concodave@gmail.com', password: '123456' })
